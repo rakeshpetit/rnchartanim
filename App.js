@@ -1,10 +1,9 @@
-import Svg, { Circle, G} from 'react-native-svg';
 import React, {Component} from 'react';
-import { Easing, Button, Animated, Platform, StyleSheet, Text, View} from 'react-native';
-import Container from './Container';
+import { StyleSheet, View} from 'react-native';
+import Container from './components/Container';
 
 
-export default class App extends Component<Props> {
+export default class App extends Component {
 
 
     render() {

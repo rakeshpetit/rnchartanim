@@ -1,37 +1,7 @@
-import Svg,{
-    Circle,
-    Ellipse,
-    G,
-    // Text,
-    TSpan,
-    TextPath,
-    Path,
-    Polygon,
-    Polyline,
-    Line,
-    Rect,
-    Use,
-    Image,
-    Symbol,
-    Defs,
-    LinearGradient,
-    RadialGradient,
-    Stop,
-    ClipPath,
-    Pattern,
-    Mask,
-} from 'react-native-svg';
-
-/* Use this if you are using Expo
-import { Svg } from 'expo';
-const { Circle, Rect } = Svg;
-*/
-
+import Svg from 'react-native-svg';
 import React from 'react';
-import { Easing, Animated, Text, View, StyleSheet, Dimensions } from 'react-native';
+import { Easing, Animated, View, Dimensions } from 'react-native';
 import Bar from './Bar';
-// Percentages work in plain react-native but aren't supported in Expo yet, workaround with this or onLayout
-const { width, height } = Dimensions.get('window');
 const AnimatedBar = Animated.createAnimatedComponent(Bar);
 
 export default class Bars extends React.Component {
