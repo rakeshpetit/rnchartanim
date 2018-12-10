@@ -47,16 +47,19 @@ export default class Bars extends React.Component {
       componentDidMount() {
         this.animate();
       }
+
+      componentDidUpdate(prevProps, prevState) {
+        this.state.animValue.setValue(0);
+        this.animate();
+      }
       
 
-      animate = ()=>{
-        console.log('animate!!!!!');
-        
+      animate = ()=>{        
         Animated.timing(
             this.state.animValue,
             {
                 toValue: 1,
-                duration: 800,
+                duration: 400,
                 easing: Easing.inOut(Easing.quad)
             }
         ).start(()=>{
@@ -64,9 +67,7 @@ export default class Bars extends React.Component {
       });
     };
 
-    animateButton = ()=>{
-        console.log('animate!!!!!');
-        
+    animateButton = ()=>{        
         Animated.timing(
             this.state.animValue,
             {
@@ -89,7 +90,7 @@ export default class Bars extends React.Component {
     };
 
   render() {
-    const data = [ 465, 155, 540, 265, 875, 124, 196, 486, 575, 125, 300, 1150, 1450, 120, 154, 235, 423];
+    const { data } = this.props;
     const maxData = 200/Math.max.apply(Math, data);
     console.log('maxData', maxData);
     let maxHeight = Animated.multiply(this.state.animValue, maxData);

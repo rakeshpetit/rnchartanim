@@ -21,11 +21,11 @@ export default class Slice extends Component {
             <Rect
             ref={index}
             key={index}
-            x={index*10}
+            x={index*15}
             y={-item*maxData}
             rotation="0"
             onPress = {(() => this.props.animate())}
-            width="5"
+            width="8"
             height={item*maxData}
             fill='blue'
             stroke="green"
