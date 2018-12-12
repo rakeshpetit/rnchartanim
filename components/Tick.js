@@ -23,7 +23,8 @@ export class Tick extends Component {
         if(this.props.value !== prevProps.value) {
             Animated.timing(this.animation, {
                 toValue: getPosition(this.props.value, this.props.height),
-                duration: 500
+                duration: 500,
+                useNativeDriver: true
             }).start();
         }
     }

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Animated, StyleSheet, Text, TouchableOpacity, View, PanResponder, Dimensions } from 'react-native'
 import moment from 'moment';
 const width = Dimensions.get('window').width;
-const threshold = width * 0.25;
+const threshold = width * 0.1;
 const duration = 200;
 
 export class DateContainer extends Component {
@@ -52,7 +52,7 @@ export class DateContainer extends Component {
         const xVal = direction === 'right' ? -width : width 
         Animated.timing(this.state.position, {
             toValue: { x: xVal, y: 0 },
-            duration: 0
+            duration: 0,
           }).start();
         this.resetPosition();
       }
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
         zIndex: 101
     },
     buttonText: {
-        fontSize: 10,
+        fontSize: 15,
         alignItems: 'center',
         justifyContent: 'center'
     },

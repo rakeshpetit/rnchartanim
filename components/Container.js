@@ -145,41 +145,41 @@ export default class Container extends Component {
         const { barData, dataToShow } = this.state;
         return (
             <View style={styles.container}>
-            <View style={{alignItems: 'center', flex: 5}}>
-                <Svg
-                    width={200}
-                    style={styles.pieSVG}
-                    height={200}
-                    viewBox={`-100 -100 200 200`}
-                >
-                    <G>
-                        {
-                            dataToShow.map( (item, index) =>{
-                                return (
-                                    <AnimatedSlice
-                                        index={index}
-                                        endAngle={endAngle}
-                                        color={item.color}
-                                        data={dataToShow}
-                                        key={'pie_shape_' + index}
-                                    />
-                                )
-                            })
-                        }
-                        {/* <SvgText
+                <View style={{ alignItems: 'center', flex: 5 }}>
+                    <Svg
+                        width={200}
+                        style={styles.pieSVG}
+                        height={200}
+                        viewBox={`-100 -100 200 200`}
+                    >
+                        <G>
+                            {
+                                dataToShow.map((item, index) => {
+                                    return (
+                                        <AnimatedSlice
+                                            index={index}
+                                            endAngle={endAngle}
+                                            color={item.color}
+                                            data={dataToShow}
+                                            key={'pie_shape_' + index}
+                                        />
+                                    )
+                                })
+                            }
+                            {/* <SvgText
                                 stroke="blue"
                                 fontSize="40"
                                 textAnchor="middle">{barData[0] * 10}</SvgText> */}
-                         
-                    </G>
-                </Svg>
-                <TickContainer value={barData[0] * 9} />
-                <View style={{marginTop: 50}}>
-                <Bars ref={instance => { this.bar = instance; }}  data={this.state.barData}/>
+
+                        </G>
+                    </Svg>
+                    <TickContainer value={barData[0] * 9} />
+                    <View style={{ marginTop: 50 }}>
+                        <Bars ref={instance => { this.bar = instance; }} data={this.state.barData} />
+                    </View>
                 </View>
-                </View>
-                <View style={{flex: 1} }>
-                <DateContainer changeData={this.changeData}/>
+                <View style={{ flex: 1 }}>
+                    <DateContainer changeData={this.changeData} />
                 </View>
             </View>
         );
@@ -189,8 +189,8 @@ export default class Container extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 100,
-    marginBottom: 60,
+    marginTop: 20,
+    marginBottom: 30,
     justifyContent: 'space-between',
     backgroundColor: 'white'
   } 
