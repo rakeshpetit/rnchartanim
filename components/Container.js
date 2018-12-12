@@ -178,12 +178,8 @@ export default class Container extends Component {
                 <Bars ref={instance => { this.bar = instance; }}  data={this.state.barData}/>
                 </View>
                 </View>
-                <View style={{flex: 1}}>
+                <View style={{flex: 1} }>
                 <DateContainer changeData={this.changeData}/>
-                </View>
-                <View style={{flex: 1, marginTop: 20}}>
-                    <Button title={'Press'} onPress={this.refreshCharts}/>
-                    <Button title={'Change Data'} onPress={this.changeData}/>
                 </View>
             </View>
         );
@@ -193,8 +189,9 @@ export default class Container extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 60,
-    justifyContent: 'space-around',
+    marginTop: 100,
+    marginBottom: 60,
+    justifyContent: 'space-between',
     backgroundColor: 'white'
   } 
 });
