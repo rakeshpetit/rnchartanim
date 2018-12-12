@@ -29,7 +29,7 @@ export class TickContainer extends Component {
     render() {
         const { height, measured } = this.state;
         const wrapStyle = measured ? { height } : styles.measure;
-        const digits = this.getDigits(this.state.value);     
+        const digits = this.getDigits(this.props.value);     
         console.log('digits', digits);
         return (
             <View style={[styles.container]}>
@@ -53,11 +53,12 @@ export default TickContainer;
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        // marginTop: 100,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: 'white'
+        // flex: 1,
+        marginTop: 75,
+        // alignItems: 'center',
+        position: 'absolute',
+        // justifyContent: 'center',
+        // backgroundColor: 'white'
       } ,
       measure: {
           opacity: 0

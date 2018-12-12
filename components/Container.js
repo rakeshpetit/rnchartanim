@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 import { Easing, Button, Animated, StyleSheet, Text, View} from 'react-native';
 import Slice from "./Slice";
 import Bars from './Bars';
+import DateContainer from './DateContainer';
+import TickContainer from './TickContainer';
 const AnimatedSlice = Animated.createAnimatedComponent(Slice);
 const demoData = [
   {
@@ -143,6 +145,7 @@ export default class Container extends Component {
         const { barData, dataToShow } = this.state;
         return (
             <View style={styles.container}>
+            <View style={{alignItems: 'center', flex: 5}}>
                 <Svg
                     width={200}
                     style={styles.pieSVG}
@@ -163,15 +166,22 @@ export default class Container extends Component {
                                 )
                             })
                         }
-                        <SvgText
+                        {/* <SvgText
                                 stroke="blue"
                                 fontSize="40"
-                                textAnchor="middle">{barData[0] * 10}</SvgText>
+                                textAnchor="middle">{barData[0] * 10}</SvgText> */}
                          
                     </G>
                 </Svg>
+                <TickContainer value={barData[0] * 9} />
+                <View style={{marginTop: 50}}>
                 <Bars ref={instance => { this.bar = instance; }}  data={this.state.barData}/>
-                <View style={{marginTop: 20}}>
+                </View>
+                </View>
+                <View style={{flex: 1}}>
+                <DateContainer changeData={this.changeData}/>
+                </View>
+                <View style={{flex: 1, marginTop: 20}}>
                     <Button title={'Press'} onPress={this.refreshCharts}/>
                     <Button title={'Change Data'} onPress={this.changeData}/>
                 </View>
@@ -183,8 +193,7 @@ export default class Container extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 40,
-    alignItems: 'center',
+    marginTop: 60,
     justifyContent: 'space-around',
     backgroundColor: 'white'
   } 

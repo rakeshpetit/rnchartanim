@@ -11,9 +11,9 @@ export default class App extends Component {
     render() {
         return (
             <View style={styles.container}>
-                {/* <Container /> */}
+                <Container />
                 {/* <TickContainer /> */}
-                <DateContainer />
+                {/* <DateContainer /> */}
             </View>
         );
     }
