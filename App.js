@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { StyleSheet, View} from 'react-native';
 import Container from './components/Container';
 import TickContainer from './components/TickContainer';
+import DateContainer from './components/DateContainer';
 
 
 export default class App extends Component {
@@ -11,7 +12,8 @@ export default class App extends Component {
         return (
             <View style={styles.container}>
                 {/* <Container /> */}
-                <TickContainer />
+                {/* <TickContainer /> */}
+                <DateContainer />
             </View>
         );
     }

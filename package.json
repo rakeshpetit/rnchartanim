@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "d3-shape": "^1.2.2",
+    "moment": "^2.22.2",
     "react": "16.6.1",
     "react-native": "0.57.7",
     "react-native-svg": "^8.0.8"

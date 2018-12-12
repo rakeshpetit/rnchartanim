@@ -29,7 +29,7 @@ export default class Bars extends React.Component {
             this.state.animValue,
             {
                 toValue: 1,
-                duration: 400,
+                duration: 600,
                 easing: Easing.inOut(Easing.quad)
             }
         ).start(()=>{
